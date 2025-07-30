@@ -15,11 +15,6 @@ if not url or not auth_token:
     raise ValueError("Missing required environment variables!")
 
 conn = libsql.connect("hello.db", sync_url=url, auth_token=auth_token)
-# conn = libsql.connect(
-#     "hello.db",
-#     sync_url="libsql://natural-hazards-wasayq5.turso.io",
-#     auth_token=eyJhbGciOiJFZERTQSIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3NTM4NTkyOTYsImlkIjoiZWE1NzJiYjEtN2NiZi00NGM5LTkwNjEtMTE4ZmFkNTAyMWYwIiwicmlkIjoiYmU0MjQyOWUtMzcyMC00MGVhLThmZDMtYTEyNGVhNzIwN2Y1In0.oL-bueOu1Iv6Hv3aSnL0K4_GkQjbLsd2Q2CrH22Y07yDFIth-yuZDSguUMd-uKNH5Tw3VCQebBiRI88SP6jQAg
-# )
 
 conn.sync()
 
